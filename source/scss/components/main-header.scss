@@ -1,0 +1,147 @@
+.main-header__container {
+  display: flex;
+  align-items: center;
+  padding-top: 28px;
+  padding-bottom: 20px;
+}
+
+.main-header__menu {
+  display: none;
+}
+
+.main-header__logo {
+  flex-shrink: 0;
+}
+
+.main-header__list {
+  margin: 0;
+  margin-left: 76px;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(7, auto);
+  gap: 10px 42px;
+}
+
+@media (max-width: 1530px) {
+  .main-header__list {
+    grid-template-columns: repeat(5, auto);
+  }
+}
+
+@media (max-width: 1330px) {
+  .main-header__list {
+    grid-template-columns: repeat(4, auto);
+  }
+}
+
+@media (max-width: 1230px) {
+  .main-header__list {
+    grid-template-columns: repeat(3, auto);
+  }
+}
+
+@media (max-width: 1130px) {
+  .main-header__list {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+.main-header__link {
+  font-weight: 700;
+  line-height: 150%;
+  text-transform: uppercase;
+}
+
+.main-header__user-navigation {
+  flex-shrink: 0;
+  margin-left: auto;
+  margin-right: 19px;
+}
+
+@include tablet {
+  .main-header__container {
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    z-index: 100;
+
+    &::before {
+      position: absolute;
+      z-index: 100;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $color-bg;
+    }
+  }
+
+  .main-header__menu {
+    display: block;
+    padding: 0;
+    z-index: 103;
+  }
+
+  .main-header__logo {
+    margin-left: 90px;
+    z-index: 103;
+  }
+
+  .main-header__list {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding-top: 163px;
+    padding-left: 49px;
+    display: block;
+    overflow: auto;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .main-header__list.active {
+    left: 0;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .main-header__item:not(:last-child) {
+    margin-bottom: 15px;
+  }
+
+  .main-header__link {
+    font-size: 36px;
+    color: $color-bg;
+    text-shadow: 1px 1px $color-gray, 1px -1px $color-gray, -1px 1px $color-gray, -1px -1px $color-gray, 3px 3px 6px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@include mobile {
+  .main-header__container {
+    padding-top: 19px;
+  }
+
+  .main-header__menu {
+    margin-left: -2px;
+  }
+
+  .main-header__logo {
+    margin-left: auto;
+    margin-right: -3px;
+    width: 100px;
+    height: 38px;
+  }
+
+  .main-header__list {
+    padding-top: 71px;
+    padding-left: 18px;
+  }
+
+  .main-header__link {
+    font-size: 20px;
+  }
+}
