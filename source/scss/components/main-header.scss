@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   padding-top: 28px;
-  padding-bottom: 20px;
+  padding-bottom: 28px;
 }
 
 .main-header__menu {
@@ -48,9 +48,29 @@
 }
 
 .main-header__link {
+  display: block;
+  position: relative;
   font-weight: 700;
   line-height: 150%;
   text-transform: uppercase;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: $color-white;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.main-header__link:hover::before,
+.main-header__link:focus::before,
+.main-header__link:active::before {
+  width: 100%;
+  transition: all 0.3s ease-in-out;
 }
 
 .main-header__user-navigation {
@@ -82,6 +102,14 @@
     display: block;
     padding: 0;
     z-index: 103;
+    transition: all 0.3s ease-in-out;
+
+    &:hover,
+    &:focus,
+    &:active {
+      opacity: 0.5;
+      transition: all 0.3s ease-in-out;
+    }
   }
 
   .main-header__logo {
@@ -102,6 +130,10 @@
     display: block;
     overflow: auto;
     transition: all 0.3s ease-in-out;
+
+    &--nojs {
+      left: 0;
+    }
   }
 
   .main-header__list.active {
@@ -117,6 +149,18 @@
     font-size: 36px;
     color: $color-bg;
     text-shadow: 1px 1px $color-gray, 1px -1px $color-gray, -1px 1px $color-gray, -1px -1px $color-gray, 3px 3px 6px rgba(0, 0, 0, 0.5);
+
+    &::before {
+      display: none;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $color-white;
+      text-shadow: none;
+      transition: all 0.3s ease-in-out;
+    }
   }
 }
 

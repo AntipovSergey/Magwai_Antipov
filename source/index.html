@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Author: Sergey Antipov, Category: Space, Length: 1 page">
-  <title></title>
+  <title>Magwai</title>
   <link rel="stylesheet" href="css/style.min.css">
   <link rel="preload" href="fonts/montserrat-Regular.woff2" as="font" crossorigin>
   <link rel="preload" href="fonts/montserrat-SemiBold.woff2" as="font" crossorigin>
@@ -26,7 +26,7 @@
           <img src="img/logo.svg" width="157" height="60" alt="Логотип компании">
         </a>
         <nav>
-          <ul class="main-header__list">
+          <ul class="main-header__list main-header__list--nojs">
             <li class="main-header__item">
               <a class="main-header__link" href="#">Услуги</a>
             </li>
@@ -50,18 +50,64 @@
             </li>
           </ul>
         </nav>
-        <div class="main-header__user-navigation user-navigation">
+        <div class="main-header__user-navigation user-navigation user-navigation--nojs">
           <button class="user-navigation__phone btn-reset" type="button" aria-label="Позвонить по телефону">
             <svg width="21" height="20"  xmlns="http://www.w3.org/2000/svg">
               <use xlink:href="img/sprite.svg#phone"></use>
             </svg>
           </button>
-          <button class="user-navigation__submit btn-reset" type="button">
+          <button class="user-navigation__submit btn-reset btn" type="button">
             <span>Оставить заявку</span>
           </button>
         </div>
       </div>
     </header>
+    <main>
+      <h1 class="visually-hidden">Сайт компании Magwai</h1>
+      <section class="promo">
+        <h2 class="visually-hidden">Пробо-блок сайта</h2>
+        <ul class="promo__list">
+          <li class="promo__item">
+            <button class="promo__button btn-reset">Dogie coin</button>
+          </li>
+          <li class="promo__item">
+            <button class="promo__button btn-reset">Упал</button>
+          </li>
+          <li class="promo__item">
+            <button class="promo__button btn-reset">Возвращение</button>
+          </li>
+        </ul>
+        <div class="promo__slide promo__slide--first">
+          <div class="promo__content">
+            <h3>Полет Илона Маска <br>
+              и DOGIE COIN</h3>
+            <p>В прошлый четверг все офигели от полета DOGIE COIN на марс.</p>
+            <button class="promo__submit btn-reset btn" type="button">
+              <span>Оставить заявку</span>
+            </button>
+          </div>
+        </div>
+        <div class="promo__slide promo__slide--second">
+          <div class="promo__content">
+            <h3>DOGIE COIN <br> УПАЛ</h3>
+            <p>Все в шоке, я потерял все деньги</p>
+            <button class="promo__submit btn-reset btn" type="button">
+              <span>Оставить заявку</span>
+            </button>
+          </div>
+        </div>
+        <div class="promo__slide promo__slide--third">
+          <div class="promo__content">
+            <h3>Эпическое возвращения <br>
+              на хаи</h3>
+            <p>Все в шоке, я снова богат</p>
+            <button class="promo__submit btn-reset btn" type="button">
+              <span>Оставить заявку</span>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
   </div>
   <script src="js/vendor.js"></script>
   <script src="js/main.js"></script>

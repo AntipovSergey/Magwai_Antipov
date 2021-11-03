@@ -6,8 +6,17 @@
 .user-navigation__phone {
   width: 73px;
   height: 60px;
-  border: 1px solid rgba($color: $color-white, $alpha: 0.5);
+  border: 1px solid $color-white;
+  opacity: 0.5;
   transform: skew(-18deg, 0deg);
+  transition: all 0.3s ease-in-out;
+
+  &:hover,
+  &:focus,
+  &:active {
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+  }
 }
 
 .user-navigation__phone svg {
@@ -15,29 +24,11 @@
 }
 
 .user-navigation__submit {
-  position: relative;
   margin-left: 33px;
   padding-top: 23px;
   padding-bottom: 22px;
   padding-right: 68px;
   padding-left: 68px;
-  font-weight: 700;
-  font-size: 12px;
-  color: inherit;
-  text-transform: uppercase;
-  border: 1px solid rgba($color: $color-white, $alpha: 0.5);
-  transform: skew(-18deg, 0deg);
-  background-color: $color-btn;
-
-  &::after {
-    position: absolute;
-    content: "";
-    top: -1px;
-    right: -14px;
-    width: 6px;
-    height: 104%;
-    background-color: $color-white;
-  }
 }
 
 .user-navigation__submit span {
@@ -73,6 +64,10 @@
     padding-bottom: 21px;
     flex-direction: column;
     transition: all 0.3s ease-in-out;
+
+    &--nojs {
+      left: 0;
+    }
   }
 
   .user-navigation.active {

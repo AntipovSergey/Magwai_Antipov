@@ -1,0 +1,151 @@
+.promo {
+  position: relative;
+}
+
+.promo__slide {
+  position: relative;
+  padding-top: 599px;
+  padding-bottom: 169px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
+
+  &--first {
+    background-image: url("../img/bg-1.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/bg-1@2x.jpg");
+    }
+  }
+
+  &--second {
+    background-image: url("../img/bg-2.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/bg-2@2x.jpg");
+    }
+  }
+
+  &--third {
+    background-image: url("../img/bg-3.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/bg-3@2x.jpg");
+    }
+  }
+
+  &--hidden {
+    display: none;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    height: 170px;
+    width: 100%;
+    background: linear-gradient(180deg, #131313 0%, rgba(19, 19, 19, 0) 100%);
+    transform: rotate(-180deg);
+  }
+}
+
+.promo__content {
+  position: relative;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.promo__list {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 159px;
+  padding-right: 95px;
+  list-style: none;
+  text-align: right;
+  z-index: 400;
+}
+
+.promo__item {
+  margin-bottom: 11px;
+}
+
+.promo__button {
+  font-size: 14px;
+  line-height: 150%;
+  text-transform: uppercase;
+  color: inherit;
+  opacity: 0.6;
+  transition: all 0.3s ease-in-out;
+
+  &--active {
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.promo__slide h3 {
+  margin: 0;
+  margin-bottom: 40px;
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 51px;
+  text-transform: uppercase;
+}
+
+.promo__slide p {
+  margin: 0;
+  margin-bottom: 40px;
+  font-size: 16px;
+  opacity: 0.79;
+  max-width: 550px;
+}
+
+.promo__submit {
+  margin-left: 9px;
+  padding-top: 23px;
+  padding-bottom: 22px;
+  padding-right: 68px;
+  padding-left: 68px;
+}
+
+.promo__submit span {
+  display: block;
+  transform: skew(18deg, 0deg);
+}
+
+@include tablet {
+  .promo__content {
+    padding-left: 49px;
+    padding-right: 49px;
+  }
+
+  .promo__list {
+    padding-right: 49px;
+  }
+}
+
+@include mobile {
+  .promo__content {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .promo__list {
+    padding-right: 18px;
+    padding-bottom: 700px;
+  }
+
+  .promo__submit {
+    margin-left: 0;
+    width: 100%;
+
+    &::after {
+      display: none;
+    }
+  }
+}

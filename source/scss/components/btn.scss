@@ -1,0 +1,30 @@
+.btn {
+  position: relative;
+  font-weight: 700;
+  font-size: 12px;
+  color: inherit;
+  text-transform: uppercase;
+  border: 1px solid rgba($color: $color-white, $alpha: 0.5);
+  transform: skew(-18deg, 0deg);
+  background-color: $color-btn;
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: -1px;
+    right: -14px;
+    width: 6px;
+    height: 104%;
+    background-color: $color-white;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: rgba($color: $color-btn, $alpha: 0.5);
+    border: 1px solid rgba($color: $color-white, $alpha: 1);
+    transition: all 0.3s ease-in-out;
+  }
+}
