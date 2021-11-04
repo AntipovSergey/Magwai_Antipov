@@ -7,10 +7,12 @@ window.addEventListener('DOMContentLoaded', function() {
 
 // Открытие меню-бургера
 
-  burger.addEventListener('click', () => {
-    headerMenu.classList.toggle('active');
-    userMenu.classList.toggle('active');
-  })
+  if (burger) {
+    burger.addEventListener('click', () => {
+      headerMenu.classList.toggle('active');
+      userMenu.classList.toggle('active');
+    })
+  }
 
   if(headerMenu && userMenu) {
     headerMenu.classList.remove('main-header__list--nojs');
@@ -43,5 +45,68 @@ window.addEventListener('DOMContentLoaded', function() {
       changeSlides(index);
     });
   });
+
+  const articleList = document.querySelector('.cards__list');
+  const articlesMore = document.querySelector('.article-content__button');
+  let prodQuantity = 10;
+  let dataLength = null;
+
+  if(articleList) {
+    const loadArticles = (quantity = 10) => {
+      fetch('../data/data.json')
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+
+          dataLength = data.length;
+
+          articleList.innerHTML = '';
+
+          for (let i = 0; i < dataLength; i++) {
+            if (i < quantity) {
+              let item = data[i];
+
+              articleList.innerHTML += `
+              <li class="cards__item">
+                <article class="cards__content article-content">
+                  <div class="article-content__image">
+                    <picture>
+                      <source srcset="${item.mainImageWebp}, ${item.mainImageWebp2x}" type="image/webp">
+                      <!-- 1х: 320px; 2x: 640px -->
+                      <img src="${item.mainImage}" srcset="${item.mainImage2x}" width="320" height="185" alt="Картинка карточки">
+                    </picture>
+                  </div>
+                  <div class="article-content__content">
+                    <span>${item.caption}</span>
+                    <h3>${item.title}</h3>
+                    <blockquote>
+                      <p>${item.quote}</p>
+                      <p>Posted by <cite>${item.author}</cite>, on <time datetime="${item.datetime}">${item.date}</time></p>
+                    </blockquote>
+                    <a class="article-content__link" href="#">Continue reading</a>
+                  </div>
+                </article>
+              </li>
+              `;
+            }
+          }
+        })
+    }
+
+    loadArticles();
+
+    articlesMore.addEventListener('click', (e) => {
+      prodQuantity = prodQuantity + 6;
+
+      loadArticles(prodQuantity);
+
+      if (prodQuantity >= dataLength) {
+        articlesMore.style.display = "none";
+      } else {
+        articlesMore.style.display = "flex";
+      }
+    });
+  }
 
 });

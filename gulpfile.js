@@ -42,6 +42,13 @@ const html = () => {
     .pipe(gulp.dest("build"));
 }
 
+//Data
+
+const data = () => {
+  return gulp.src("source/data/data.json")
+    .pipe(gulp.dest("build/data"));
+}
+
 // Video
 
 const video = () => {
@@ -170,6 +177,7 @@ const build = gulp.series(
     styles,
     html,
     video,
+    data,
     scripts,
     sprite,
     createWebp
@@ -189,6 +197,7 @@ exports.default = gulp.series(
     styles,
     html,
     video,
+    data,
     scripts,
     sprite,
     createWebp
