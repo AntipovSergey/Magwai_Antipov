@@ -53,8 +53,17 @@
 
 .promo__content {
   position: relative;
-  padding-left: 100px;
-  padding-right: 100px;
+}
+
+.promo__container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 1780px;
+  padding: 0 30px;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
 }
 
 .promo__list {
@@ -64,7 +73,8 @@
   margin: 0;
   padding: 0;
   padding-bottom: 159px;
-  padding-right: 95px;
+  // padding-right: 95px;
+  padding-right: 25px;
   list-style: none;
   text-align: right;
   z-index: 50;
@@ -111,6 +121,7 @@
   padding-bottom: 22px;
   padding-right: 68px;
   padding-left: 68px;
+  z-index: 60;
 }
 
 .promo__submit span {
@@ -119,22 +130,12 @@
 }
 
 @include tablet {
-  .promo__content {
-    padding-left: 49px;
-    padding-right: 49px;
-  }
-
   .promo__list {
     padding-right: 49px;
   }
 }
 
 @include mobile {
-  .promo__content {
-    padding-left: 18px;
-    padding-right: 18px;
-  }
-
   .promo__list {
     top: 100px;
     padding-right: 18px;
