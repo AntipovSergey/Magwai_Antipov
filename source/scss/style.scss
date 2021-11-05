@@ -1,5 +1,6 @@
 //ГЛОБАЛЬНЫЕ ЭЛЕМЕНТЫ
 @import "./vendor/normalize";
+@import "./vendor/graph-modal.min";
 @import "vars";
 @import "mixins";
 @import "fonts";
@@ -12,3 +13,6 @@
 @import "./components/btn";
 @import "./components/cards";
 @import "./components/article-content";
+@import "./components/modal-content";
+@import "./components/modal";
+@import "./components/form";

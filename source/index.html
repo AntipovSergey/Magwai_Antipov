@@ -56,7 +56,7 @@
               <use xlink:href="img/sprite.svg#phone"></use>
             </svg>
           </button>
-          <button class="user-navigation__submit btn-reset btn" type="button">
+          <button class="user-navigation__submit btn-reset btn" data-graph-path="modal" type="button">
             <span>Оставить заявку</span>
           </button>
         </div>
@@ -82,7 +82,7 @@
             <h3>Полет Илона Маска <br>
               и DOGIE COIN</h3>
             <p>В прошлый четверг все офигели от полета DOGIE COIN на марс.</p>
-            <button class="promo__submit btn-reset btn" type="button">
+            <button class="promo__submit btn-reset btn" data-graph-path="modal" type="button">
               <span>Оставить заявку</span>
             </button>
           </div>
@@ -91,7 +91,7 @@
           <div class="promo__content">
             <h3>DOGIE COIN <br> УПАЛ</h3>
             <p>Все в шоке, я потерял все деньги</p>
-            <button class="promo__submit btn-reset btn" type="button">
+            <button class="promo__submit btn-reset btn" data-graph-path="modal" type="button">
               <span>Оставить заявку</span>
             </button>
           </div>
@@ -101,7 +101,7 @@
             <h3>Эпическое возвращения <br>
               на хаи</h3>
             <p>Все в шоке, я снова богат</p>
-            <button class="promo__submit btn-reset btn" type="button">
+            <button class="promo__submit btn-reset btn" data-graph-path="modal" type="button">
               <span>Оставить заявку</span>
             </button>
           </div>
@@ -112,11 +112,64 @@
           <h2>Карточки</h2>
           <ul class="cards__list">
           </ul>
-          <button class="article-content__button btn-reset btn" type="button">
+          <button class="article-content__button btn-reset btn"  type="button">
             <span>Загрузить еще</span>
           </button>
         </div>
       </section>
+      <div class="modal">
+        <div class="modal__container" role="dialog" aria-modal="true" data-graph-target="modal">
+          <div class="modal__contents">
+            <div class="modal__img">
+              <picture>
+                <source srcset="img/modal.webp 1x, modal@2x.webp 2x" type="image/webp">
+                <!-- 1х: 819px; 2x: 1638px -->
+                <img src="img/modal.jpg" srcset="img/modal@2x.jpg" width="819" height="880" alt="Фотография Луны">
+              </picture>
+            </div>
+            <div class="modal__content modal-content">
+              <div class="modal-content__header">
+                <h2>Оставьте заявку</h2>
+                <p>Оставьте заявку и наш менеджер свяжется с вами
+                в течение 10 -15 минут</p>
+                <button class="btn-reset modal-content__btn modal__close" aria-label="Закрыть модальное окно">
+                  <svg width="26" height="26"  xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="img/sprite.svg#close"></use>
+                  </svg>
+                </button>
+              </div>
+              <div class="modal-content__form form">
+                <form action="https://echo.htmlacademy.ru/" method="POST" id="popup-form">
+                  <div class="form__field">
+                    <label for="name">
+                      <input type="text" id="name" name="name" data-validate-field="name" placeholder="Ваше имя*" pattern="^[a-zA-Z][a-zA-Z0-9-_\.][а-яА-Я][а-яА-Я0-9-_\.]{1,20}$" autocomplete="off">
+                    </label>
+                  </div>
+                  <div class="form__mail">
+                    <label for="mail">
+                      <span>E-mail*</span>
+                      <input type="email" id="mail" name="mail" data-validate-field="email" placeholder="MAGWAI@info.ru" pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$" autocomplete="off">
+                    </label>
+                  </div>
+                  <label for="tel">
+                    <input type="tel" id="tel" name="tel" placeholder="+7(___)" autocomplete="off">
+                  </label>
+                  <div class="form__field-text">
+                    <textarea name="text" id="popup-text" data-validate-field="text" placeholder="Ваш вопрос*"></textarea>
+                  </div>
+                  <div class="form__bottom">
+                    <button class="form__button btn btn-reset" type="submit">
+                      <span>Оставить заявку</span>
+                    </button>
+                    <p>Нажимая на кнопку “Оставить заявку” вы соглашаетесь <br>
+                      с <a href="#">“Пользовательским соглашением”</a></p>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
   </div>
   <script src="js/vendor.js"></script>

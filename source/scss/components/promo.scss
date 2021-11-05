@@ -67,7 +67,7 @@
   padding-right: 95px;
   list-style: none;
   text-align: right;
-  z-index: 400;
+  z-index: 50;
 }
 
 .promo__item {
@@ -136,6 +136,7 @@
   }
 
   .promo__list {
+    top: 100px;
     padding-right: 18px;
     padding-bottom: 700px;
   }
