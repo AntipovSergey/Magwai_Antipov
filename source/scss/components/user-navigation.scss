@@ -59,11 +59,13 @@
     left: -100%;
     width: 100%;
     margin: 0;
+    padding-top: 21px;
     padding-left: 18px;
     padding-right: 18px;
     padding-bottom: 21px;
     flex-direction: column;
     transition: all 0.3s ease-in-out;
+    background-color: $color-bg-alternate;
 
     &--nojs {
       left: 0;

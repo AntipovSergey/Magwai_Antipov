@@ -9,6 +9,7 @@ window.addEventListener('DOMContentLoaded', function() {
   let prodQuantity = 10;
   let dataLength = null;
   const selectorForm = document.querySelector('#tel');
+  const body = document.querySelector('body');
 
 // Открытие меню-бургера
 
@@ -16,6 +17,7 @@ if (burger) {
   burger.addEventListener('click', () => {
     headerMenu.classList.toggle('active');
     userMenu.classList.toggle('active');
+    body.classList.toggle('disable-scroll');
   })
 }
 
