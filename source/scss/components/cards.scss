@@ -30,6 +30,19 @@
   gap: 30px;
 }
 
+.cards__button {
+  margin-right: 16px;
+  padding-top: 23px;
+  padding-bottom: 22px;
+  padding-right: 76px;
+  padding-left: 78px;
+}
+
+.cards__button span {
+  display: block;
+  transform: skew(18deg, 0deg);
+}
+
 @media (max-width: 1800px) {
   .cards__list {
     grid-template-columns: repeat(4, 1fr);
